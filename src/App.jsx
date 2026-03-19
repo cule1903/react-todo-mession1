@@ -1,8 +1,15 @@
+import { useTodos } from './useTodos'
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
+
 function App() {
+  const { todos, addTodo, removeTodo } = useTodos()
+
   return (
     <div className="app">
       <h1>React Todo List</h1>
-      <p>2단계에서 개발될 예정입니다.</p>
+      <TodoForm onAdd={addTodo} />
+      <TodoList todos={todos} onRemove={removeTodo} />
     </div>
   )
 }
