@@ -2,13 +2,7 @@ import { useState, useEffect } from 'react'
 import { loadTodos, saveTodos, createTodo } from './utils/storage'
 
 export const useTodos = () => {
-  const [todos, setTodos] = useState([])
-
-  // 앱 최초 로딩 시 localStorage에서 todos 불러오기
-  useEffect(() => {
-    const loadedTodos = loadTodos()
-    setTodos(loadedTodos)
-  }, [])
+  const [todos, setTodos] = useState(() => loadTodos())
 
   // todos 배열이 변경될 때마다 localStorage에 자동 저장
   useEffect(() => {
