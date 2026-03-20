@@ -1,9 +1,9 @@
-import TodoList from './components/TodoList'
-import TodoWriteForm from './components/TodoWriteForm'
-import { useTodos } from './useTodos'
+import TodoList from "./components/TodoList";
+import TodoWriteForm from "./components/TodoWriteForm";
+import { useTodos } from "./useTodos";
 
 function App() {
-  const { todos, addTodo, removeTodo, toggleTodo } = useTodos()
+  const { todos, addTodo, removeTodo, toggleTodo } = useTodos();
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow">
@@ -11,7 +11,7 @@ function App() {
       <TodoWriteForm onAdd={addTodo} />
       <TodoList todos={todos} onRemove={removeTodo} onToggle={toggleTodo} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
